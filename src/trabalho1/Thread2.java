@@ -13,58 +13,76 @@ import java.util.Iterator;
 public class Thread2 extends Thread{
 
 	
+	
+	
 	@Override
 	public void run() {
 		
-		FileReader fr = null;
-			
-			try {
-				fr = new FileReader("Pasta2/Arq.txt");
-				
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			
+
+		//File arq = new File("Pasta2/arq.txt");
+		
+				//while(true) {
+				//if(arq.exists()) {
+					try (BufferedReader ler = new BufferedReader(new FileReader(new File("Pasta2/Arq1.txt")))) {
+						String linha = "";
+						
+						do {
+									
+							linha = ler.readLine();
+							String[] num = linha.split("(?<=.)");
+							int[] numC = new int[num.length];
+							int result = 0;
+							
+							for(int i = 0; i < num.length; i++) {
+								numC[i] = Integer.parseInt(num[i]);
+							}
+							
+							for(int i = 0; i < numC.length; i++) {
+								result += numC[i];
+							}
+							String r = Integer.toString(result);
+								
+							boolean existe = (new File("Pasta3/resultado.txt")).exists();
+					         
+							if(!existe) {
+								File arquivo = new File("Pasta3/resultado.txt");
+				                System.out.println("o arquivo foi criado com sucesso em '" + arquivo.getAbsolutePath() + "'");
+				            } else {
+				                System.out.println("O arquivo de resultados ja existe ;)");
+				                gravarDados(r,"Arq1.txt");  
+				                File f = new File("Pasta2/Arq1.txt");  
+				                f.delete();
+				            }
+						}while(linha != null && linha != "");
+						
+						} catch (Exception e) {
+					// TODO: handle exception
+						}
+					//} else {
+						
+						//try {
+							//System.out.println("Arquivo n�o encontrado... ");
+							//Thread2.sleep(20000);
+						//}catch (Exception e) {
+							
+						//}
+					//}
+				//}
 			}
 			
-			try (BufferedReader ler = new BufferedReader(fr)) {
-				String linha = "";
-				
-				do {
-				
-					System.out.println(linha);
-					linha = ler.readLine();
-					int result = Integer.parseInt(linha); 
-					int result1 = result + result;
-					String r = Integer.toString(result1);
-					
-					
-					for(int i = 0; i < r.length();i++) {
-						
-						gravarDados(r,"Arq.txt");
-						
-					}
-					String nome = "Pasta2/Arq.txt";  
-					File f = new File(nome);  
-					f.delete();
-				}while(linha != null && linha != "");
-				
-			
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("Deu errado!");
-		}
-	}
-	
 
-	public void gravarDados(String texto, String nomeArquivo) throws IOException {
+			public void gravarDados(String texto, String nomeArquivo) throws IOException {
+				
+				FileWriter gravar = new FileWriter("Pasta3/resultado.txt", true);
+				BufferedWriter s = new BufferedWriter(gravar);
+				s.write(nomeArquivo + ": " + texto);
+				s.flush();
+				s.close();
+				gravar.close();
+				System.out.println("Resultados gravados!");
+			}
 		
-		FileWriter gravar = new FileWriter("Pasta3/resultado.txt");
-		BufferedWriter s = new BufferedWriter(gravar);
-		s.write(nomeArquivo + ":" + texto + "\n");
-		s.flush();
-		s.close();
-		gravar.close();
-	}
 }
+
+
+
