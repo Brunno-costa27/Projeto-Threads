@@ -1,12 +1,8 @@
-Arq1.txt
-: 15Arq1.txt
-: 47Arq1.txt : 3
-Arq1.txt : 4
-Arq1.txt: 6Arq1.txt : 6
 Arq1.txt : 15
-Arq1.txt : 1
-Arq1.txt : 1
-Arq1.txt : 6
-
-Arq1.txt : 3
 Arq1.txt : 15
+Arq2.txt : 45
+Arq3.txt : 6
+Arq3.txt : 3
+Arq4.txt : 3
+Arq5.txt : 1
+Arq6.txt : 10
