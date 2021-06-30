@@ -2,4 +2,11 @@ Arq1.txt
 : 15Arq1.txt
 : 47Arq1.txt : 3
 Arq1.txt : 4
-Arq1.txt: 6
+Arq1.txt: 6Arq1.txt : 6
+Arq1.txt : 15
+Arq1.txt : 1
+Arq1.txt : 1
+Arq1.txt : 6
+
+Arq1.txt : 3
+Arq1.txt : 15

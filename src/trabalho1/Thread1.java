@@ -19,11 +19,28 @@ public class Thread1 extends Thread{
 			
 			while(true) {
 			
+//				    String path = "Pasta1";
+//					String pesquisar = ".txt";	
+//					File caminho = new File(path);
+//					boolean caminhoValido = caminho.exists();
+//					boolean eDiretorio = caminho.isDirectory();				
+//					if(caminhoValido && eDiretorio){
+//						String[] conteudo = caminho.list();
+//						for (String arquivo : conteudo) {
+//							if(arquivo.contains(pesquisar)){
+//								System.out.println(arquivo);
+//							}
+//						}
+//					}	
+				
+				
+				
 			File f = new File("Pasta1/Arq1.txt");
 			System.out.println("Verificando o diretorio...");
 			Thread1.sleep(5000);
 			if(f.exists()){
 			    System.out.println("O arquivo existe!");
+			    	
 			    // Arquivo a ser movido
 		        File arquivo = new File("Pasta1/Arq1.txt");
 		        
@@ -78,7 +95,8 @@ public class Thread1 extends Thread{
 			    
 			}else{
 			    System.out.println("O arquivo não existe!");
-			    
+			       
+			   
 			}
 			
 			}
@@ -101,6 +119,9 @@ public class Thread1 extends Thread{
 		gravar.close();
 		System.out.println("Resultados gravados!");
 	}
+	
+	
+	
 	
 	
 	}
