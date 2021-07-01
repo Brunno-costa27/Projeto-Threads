@@ -6,3 +6,7 @@ Arq3.txt : 3
 Arq4.txt : 3
 Arq5.txt : 1
 Arq6.txt : 10
+Arq7.txt : 3
+Arq8.txt : 15
+Arq9.txt : 5
+Arq10.txt : 5

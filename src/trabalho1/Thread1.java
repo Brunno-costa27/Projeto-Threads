@@ -75,7 +75,7 @@ public class Thread1 extends Thread{
                                     result += numC[i];
                                 }
                                 String r = Integer.toString(result);
-
+                                Thread1.sleep(2000);
                                 arquivo2.delete();
                                 boolean existe = (new File("Pasta3/resultado.txt")).exists();
 
